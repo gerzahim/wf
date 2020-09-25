@@ -12,8 +12,21 @@ git clone https://github.com/rasce88/wf.git wf
 cd src/wf
 ```
 
+Building UP Docker Container and Images:
+```sh
+# Install Docker Desktop App
+
+# Find the docker-compose.yml File and Build 
+cd src/wf
+docker-compose up -d --build
+docker-compose up -d --build --force-recreate
+```
+
 Install PHP dependencies:
 ```sh
+# Enter to wf_app_container 
+docker exec -it wf_app_container bash
+
 cd /var/www
 composer install
 ```
@@ -21,7 +34,7 @@ composer install
 Install NPM dependencies:
 
 ```sh
-npm ci
+npm install && npm run dev
 ```
 
 Build assets:
@@ -42,12 +55,6 @@ Generate application key:
 php artisan key:generate
 ```
 
-Create an SQLite database. You can also use another database (MySQL, Postgres), simply update your configuration accordingly.
-
-```sh
-touch database/database.sqlite
-```
-
 Run database migrations:
 
 ```sh
@@ -60,23 +67,16 @@ Run database seeder:
 php artisan db:seed
 ```
 
-Run the dev server (the output will give the address):
-
-```sh
-php artisan serve
-```
 
 To run the Ping CRM tests, run:
-
 ```
 phpunit
 ```
 
 You're ready to go! Visit Ping CRM in your browser, and login with:
-
-- **Username:** johndoe@example.com
+http://localhost:8070/
+- **Username:** admin@admin.com
 - **Password:** secret
-
 
 
 ## Setting New Project 

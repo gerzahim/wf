@@ -7,8 +7,7 @@ services:
         restart: unless-stopped
         tty: true
         ports:
-          - "7070:80"
-          - "4443:443"
+          - "4000:80"
         volumes:
           - ./src:/var/www/
           - .docker/nginx/conf.d/:/etc/nginx/conf.d/
@@ -48,7 +47,7 @@ services:
             MYSQL_USER: sf4
             MYSQL_PASSWORD: sf4
         ports:
-          - "7074:3306"
+          - "4004:3306"
             
     #PHP-MyAdmin MYSQL
     phpmyadmin:
@@ -58,7 +57,7 @@ services:
           PMA_HOST: mysql
           PMA_PORT: 3306
         ports:
-            - 7071:80
+            - 4001:80
         links:
             - mysql
 
@@ -67,4 +66,4 @@ services:
         image: djfarrelly/maildev
         container_name: wf_maildev_container
         ports:
-          - 7072:80
+          - 4002:80
