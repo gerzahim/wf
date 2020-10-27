@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Traits\HasRolesAndPermissionsTrait;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -18,6 +19,7 @@ class User extends Authenticatable
     use HasTeams;
     use Notifiable;
     use TwoFactorAuthenticatable;
+    use HasRolesAndPermissionsTrait;
 
     /**
      * The attributes that are mass assignable.
@@ -57,4 +59,36 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function teams() {
+        return $this->belongsToMany(Team::class);
+    }
+
+    public function roles() {
+        return $this->belongsToMany(Role::class, 'users_roles');
+    }
+
 }
+    /*
+    public function hasAccess(array $permissions) {
+        foreach($this->roles as $role){
+            if($role->hasAccess($permissions)){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public function getAvatarAttribute($value) {
+        return $value ?? config('user.default_avatar', 'users/default.png');
+    }
+
+    public function setLocaleAttribute($value) {
+        $this->settings = $this->settings->merge(['locale' => $value]);
+    }
+
+    public function getLocaleAttribute() {
+        return $this->settings->get('locale');
+    }
+    */
+

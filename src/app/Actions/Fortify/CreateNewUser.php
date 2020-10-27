@@ -2,6 +2,7 @@
 
 namespace App\Actions\Fortify;
 
+use App\Models\Role;
 use App\Models\Team;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
@@ -33,7 +34,13 @@ class CreateNewUser implements CreatesNewUsers
                 'email' => $input['email'],
                 'password' => Hash::make($input['password']),
             ]), function (User $user) {
+                // Create Personal Team
                 $this->createTeam($user);
+
+                // Attach role customer for new Users Registers
+                $user->roles()
+                     ->attach(Role::where('slug', 'customer')->first());
+
             });
         });
     }
