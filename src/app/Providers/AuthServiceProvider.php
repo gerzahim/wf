@@ -44,7 +44,7 @@ class AuthServiceProvider extends ServiceProvider
                 return $user->hasPermissionTo($permission->slug);
             });
         }
-        
+
         self::firstOrCreate(['key' => 'browse_'.$table_name, 'table_name' => $table_name]);
         self::firstOrCreate(['key' => 'read_'.$table_name, 'table_name' => $table_name]);
         self::firstOrCreate(['key' => 'edit_'.$table_name, 'table_name' => $table_name]);

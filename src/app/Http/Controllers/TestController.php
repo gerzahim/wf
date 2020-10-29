@@ -2,18 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use Inertia\Inertia;
+use App\Models\User;
 use App\Models\Permission;
 use App\Models\Team;
 use Illuminate\Http\Request;
-use App\Models\User;
 use Illuminate\Support\Facades\Gate;
 
 class TestController extends Controller
 {
-    public function index(Team $team) {
-
+    public function index() {
     }
 
+    public function testingInertia() {
+        return Inertia::render('Test/Test');
+    }
 
     public function testingPermissions()
     {

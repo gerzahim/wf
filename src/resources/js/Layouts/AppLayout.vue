@@ -15,7 +15,7 @@
                         <!-- Navigation Links -->
                         <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                             <jet-nav-link href="/dashboard" :active="$page.currentRouteName == 'dashboard'">
-                                Dashboard2222
+                                Dashboard
                             </jet-nav-link>
                         </div>
                     </div>
