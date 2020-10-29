@@ -26,12 +26,9 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         return Inertia\Inertia::render('Dashboard');
     })->name('dashboard');
 
-    Route::get('/test', [TestController::class, 'index']);
-    Route::get('/gate', [TestController::class, 'gate']);
-
+    Route::get('/test', [TestController::class, 'testingInertia']);
 
 });
-
 
 
 
