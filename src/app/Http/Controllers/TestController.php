@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Mail;
 use Inertia\Inertia;
 use App\Models\User;
 use App\Models\Permission;
@@ -12,6 +13,19 @@ use Illuminate\Support\Facades\Gate;
 class TestController extends Controller
 {
     public function index() {
+
+    }
+
+    public function testSendEmail() {
+        $data = array(
+            'name' => "TEST TEST TEST 7",
+        );
+
+        Mail::send('mails.test.email', $data, function ($message) {
+            $message->from('yourEmail@domain.com', 'Learning Laravel');
+            $message->to('yourEmail@domain.com')->subject('Learning Laravel test email');
+        });
+        return "Your email has been sent successfully";
     }
 
     public function testingInertia() {

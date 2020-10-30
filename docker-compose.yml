@@ -23,13 +23,11 @@ services:
           - .docker/php/local.ini:/usr/local/etc/php/conf.d/local.ini
         restart: unless-stopped
         tty: true
-        environment:
-          - maildev_host=wf_maildev_container
-            #SERVICE_NAME: app
-            #SERVICE_TAGS: dev          
+        #environment:
+          #- maildev_host=wf_maildev_container
         working_dir: /var/www
         depends_on:
-          - maildev
+          #- maildev
           - mysql   
            
     #MySQL Service
@@ -62,8 +60,8 @@ services:
             - mysql
 
     #Mail_Host
-    maildev:
-        image: djfarrelly/maildev
-        container_name: wf_maildev_container
-        ports:
-          - 4002:80
+    #maildev:
+        #image: djfarrelly/maildev
+        #container_name: wf_maildev_container
+        #ports:
+          #- 4002:80
