@@ -1,6 +1,6 @@
-# WF App
+# WF App. welcomefan
 
-Marketplace Application to E-commerce media content.
+Marketplace Application to E-commerce Adult media content.
 
 
 ## Installation
@@ -74,7 +74,7 @@ phpunit
 ```
 
 
-![Alt text](http://gerzahim.com/img/port_starfreight.png "Welcome Fun")
+![Alt text](http://gerzahim.com/img/port_welcomefun.png "Welcome Fun")
 
 
 ## Deploying to Cpanel with any SFTP (SCP Client)
