@@ -1,6 +1,6 @@
 # WF App. welcomefan
 
-Marketplace Application to E-commerce Adult media content.
+Marketplace Application for E-commerce Adult media content.
 
 
 ## Installation
