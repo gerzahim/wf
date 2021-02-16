@@ -73,12 +73,8 @@ To run the tests:
 phpunit
 ```
 
-You're ready to go! Visit WF in your browser, and login with:
 
-http://localhost:4000/
-- **Username:** admin@admin.com
-- **Password:** secret
-
+![Alt text](http://gerzahim.com/img/port_starfreight.png "Welcome Fun")
 
 
 ## Deploying to Cpanel with any SFTP (SCP Client)
