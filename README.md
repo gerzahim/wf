@@ -1,6 +1,6 @@
 # WF App. welcomefun
 
-Marketplace Application for E-commerce Adult media content.
+Marketplace Application for E-commerce media content.
 
 
 ## Installation
@@ -72,9 +72,6 @@ To run the tests:
 ```
 phpunit
 ```
-
-
-![Alt text](http://gerzahim.com/img/port_welcomefun.png "Welcome Fun")
 
 
 ## Deploying to Cpanel with any SFTP (SCP Client)
